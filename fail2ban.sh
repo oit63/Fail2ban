@@ -160,7 +160,7 @@ fi
 echo "Finish Installing ! Reboot the sshd now !"
 
 if [ ${OS} == CentOS ]; then
-  if [ ${CentOS_RHEL_version} == 7 ]; then
+  if [ ${CentOS_RHEL_version} >= 7 ]; then
     systemctl restart sshd
   else
     service ssh restart
@@ -177,3 +177,6 @@ echo 'Github: https://github.com/FunctionClub'
 echo 'QQ Group:277717865'
 
 echo "Fail2ban is now runing on this server now!"
+
+echo "fail2ban-client status ssh-iptables"
+fail2ban-client status ssh-iptables
