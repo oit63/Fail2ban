@@ -160,7 +160,7 @@ fi
 echo "Finish Installing ! Reboot the sshd now !"
 
 if [ ${OS} == CentOS ]; then
-  if [ ${CentOS_RHEL_version} >= 7 ]; then
+  if [ ${CentOS_RHEL_version} -gt 7 ]; then
     systemctl restart sshd
   else
     service ssh restart
